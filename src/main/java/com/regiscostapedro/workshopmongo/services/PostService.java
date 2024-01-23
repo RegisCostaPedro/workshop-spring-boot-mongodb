@@ -24,6 +24,6 @@ public class PostService {
 	
 	//"Buscar posts contendo um dado string no título"
 	public List<Post> findByTitle(String text){
-		return repo.findByTitleContainingIgnoreCase(text);
+		return repo.searchTitle(text);
 	}
 }
