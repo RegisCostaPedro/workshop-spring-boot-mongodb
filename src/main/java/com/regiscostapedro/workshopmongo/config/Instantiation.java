@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.regiscostapedro.workshopmongo.domain.Post;
 import com.regiscostapedro.workshopmongo.domain.User;
+import com.regiscostapedro.workshopmongo.dto.AuthorDTO;
 import com.regiscostapedro.workshopmongo.repository.PostRepository;
 import com.regiscostapedro.workshopmongo.repository.UserRepository;
 
@@ -35,11 +36,13 @@ public class Instantiation implements CommandLineRunner{
 		User maria = new User(null, "Maria Brown", "maria@gmail.com");
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
-		
-		Post post1 = new Post(null,sdf.parse("21/01/2018"),"Partiu viagem!","Vou viajar para São Paulo abraços!",maria);
-		Post post2 = new Post(null,sdf.parse("23/01/2018"),"Bom dia!","/acordei feliz hoje LMAO!",maria);
-		
+		//criar primeiro os users para assim depois ele ter a cópia para o DTO post
 		userRepository.saveAll(Arrays.asList(maria, alex, bob));
+		
+		Post post1 = new Post(null,sdf.parse("21/01/2018"),"Partiu viagem!","Vou viajar para São Paulo abraços!",new AuthorDTO(maria));
+		Post post2 = new Post(null,sdf.parse("23/01/2018"),"Bom dia!","/acordei feliz hoje LMAO!",new AuthorDTO(maria));
+		
+		;
 		postRepository.saveAll(Arrays.asList(post1,post2));
 		
 	}
