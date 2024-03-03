@@ -1,7 +1,7 @@
  # Projeto: API Restful com Spring Boot e banco MongoDB (web services + NoSQL)
  Prof. Nelio Alves <br>
- Projeto em Spring Boot feito com o objetivo de criar uma API(Application Programming Interface, ou Interface de Programação de Aplicações).
-
+ Projeto em Spring Boot feito com o objetivo de criar uma API(Application Programming Interface, ou Interface de Programação de Aplicações). <br>
+  # Esse é um sistema em que os usuários fazem posts e estes posts tem comentários tal qual uma rede social.
 <h2>Objetivos: </h2>
 <ul>
 <li>Compreender as principais diferenças entre paradigma orientado a documentos e relacional;</li>
